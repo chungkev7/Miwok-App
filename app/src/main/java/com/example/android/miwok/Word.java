@@ -11,17 +11,23 @@ public class Word {
     // Image resource ID for the word
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
+    // Constant value that represents no image was provided for this word
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Word(String mDefaultTranslation, String miwokTranslation) {
+    // Audio resource ID for the word
+    private int mAudioResourceId;
+
+    public Word(String mDefaultTranslation, String miwokTranslation, int mAudioResourceId) {
         this.mDefaultTranslation = mDefaultTranslation;
         this.mMiwokTranslation = miwokTranslation;
+        this.mAudioResourceId = mAudioResourceId;
     }
 
-    public Word(String mDefaultTranslation, String miwokTranslation, int mImageResourceId) {
+    public Word(String mDefaultTranslation, String miwokTranslation, int mImageResourceId, int mAudioResourceId) {
         this.mDefaultTranslation = mDefaultTranslation;
         this.mMiwokTranslation = miwokTranslation;
         this.mImageResourceId = mImageResourceId;
+        this.mAudioResourceId = mAudioResourceId;
     }
 
     /**
@@ -43,6 +49,13 @@ public class Word {
      */
     public int getImageResourceId() {
         return mImageResourceId;
+    }
+
+    /**
+     * Get the audio resource ID of the word
+     */
+    public int getAudioResourceId(){
+        return mAudioResourceId;
     }
 
     /**
